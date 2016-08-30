@@ -1,0 +1,64 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title class="row_css row">
+            <div ui-sref="tabs.zixun" class="col_css col positive">最新</div>
+            <div ui-sref="tabs.gonglue" class="col_css col">攻略</div>
+            <div ui-sref="tabs.zx_huodong" class="col_css col">活动</div>
+    </ion-nav-title>
+<ion-content>
+    <!--下拉刷新-->
+    <ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-c" on-refresh="refresh()"></ion-refresher>
+    <!--搜索框-->
+    <div class="item-input-inset">
+        <div class="item-input-wrapper">
+            <i class="icon icon-royal ion-search"></i>
+            <input type="text" placeholder="搜索你想了解的资讯">
+        </div>
+    </div>
+    <!--图片轮播-->
+    <ion-slide-box active-slide="myActiveSlide" auto-play="true" slide-interval="2000" does-continue="true" show-pager="false" on-slide-changed="changed(index)">
+        <ion-slide>
+            <div class="box"><img src="images/asd_02.jpg" ></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box"><img src="images/asd01_02.jpg"></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box"><img src="images/asd001_02.jpg" ></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box"><img src="images/asd00_02.jpg" ></div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box"><img src="images/asd6_02.jpg" ></div>
+        </ion-slide>
+    </ion-slide-box>
+
+    <!--内容顶部-->
+    <div class="text-center">
+        <h4>2016英雄联盟甲级职业联赛</h4>
+        <p>2016-08-01 19:00</p>
+        <div class="vs">
+            <span class="left item-thumbnail-right">WYD<i class="pic"><img src="images/0_03_03.gif"></i></span>
+            <span class="">VS</span>
+            <span class="right item-thumbnail-left">ZTR<i class="pic"><img src="images/0_05.jpg"></i></span>
+        </div>
+
+        <div ui-sref="tabs.zx_banjia" class="button positive-bg button-small light positive-border" style="margin:10px 0;">观看直播</div>
+    </div>
+
+    <!--主要内容-->
+
+    <ion-list>
+        <ion-item ng-repeat="product in products" ui-sref="tabs.zx_xiangqing" class="item title1 item-thumbnail-left item-remove-animate item-text-wrap">
+            <img ng-src="{{product.imgsrc}}"/>
+            <h3>{{product.title}}</h3>
+            <p>{{product.explain}}</p>
+            <p class="text-right">{{product.times}}</p>
+        </ion-item>
+        <!--上拉刷新-->
+        <ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>
+        <!--<ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>-->
+    </ion-list>
+
+</ion-content>
+</ion-view>

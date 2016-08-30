@@ -1,0 +1,83 @@
+<ion-view>
+    <ion-nav-title>
+        <div class="text-center">发现</div>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <i class="ion-android-expand" style="font-size:28px;margin-top:5px;margin-right: 15px;"></i>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="dark-bg">
+            <!--<div class="row"  style="font-size:20px;color:#eb551d">-->
+                <!--<div class="col text-center">发现</div>-->
+                <!--<div class="col col-10"><i class="icon ion-android-expand"></i></div>-->
+                <!--&lt;!&ndash;<div class="button icon-right button-clear ion-android-expand"></div>&ndash;&gt;-->
+            <!--</div>-->
+            <div class="row text-center">
+                <div class="pic1 col item-avatar"><img src="images/2_03.jpg" ></div>
+                <div class="pic1 col item-avatar"><img src="images/2_03.jpg" ></div>
+                <div class="pic1 col item-avatar"><img src="images/2_03.jpg" ></div>
+                <div class="pic1 col item-avatar"><img src="images/2_03.jpg" ></div>
+                <div class="pic1 col item-avatar"><img src="images/2_03.jpg" ></div>
+            </div>
+            <div class="row text-center">
+                <div class="col">EDG</div>
+                <div class="col">OMG</div>
+                <div class="col">Snake</div>
+                <div class="col">VG</div>
+                <div class="col">RNG</div>
+            </div>
+            <div class="row">
+                <div class="col col-center">
+                    <div class="button button-small  button-positive icon-right ion-ios-arrow-right" style="margin-left: 38%;">
+                        粉丝俱乐部
+                        <i style="font-size:12px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-offset-10">
+            <div class="pic1 col item-avatar">
+                <img src="images/2_19.jpg" >
+            </div>
+            <div class="pic1 col item-avatar">
+                <img src="images/2_22.jpg" >
+            </div>
+            <div class="pic1 col item-avatar">
+                <img src="images/2_24.jpg" >
+            </div>
+        </div>
+        <div class="row col-offset-10">
+            <div class="col"><p>英雄资料</p></div>
+            <div class="col"><p>召唤师查询</p></div>
+            <div class="col"><p>附近玩家</p></div>
+        </div>
+        <ion-list>
+            <ion-item class="item"><i class="icon ion-ios-alarm"></i>　对战助手</ion-item>
+            <ion-item class="item"><i class="icon ion-android-desktop"></i>　附近特权网吧</ion-item>
+            <ion-item class="item  item-icon-right ion-ios-game-controller-b-outline" ng-click="data3.showDelete=!data3.showDelete;data3.showNav=false;icons3()">
+                　游戏资料
+                <i class="icon {{data3.a}}" style="font-size:16px;"></i>
+            </ion-item>
+            <ion-item ng-show="data3.showDelete" ng-hide="data3.showNav">
+                <div class="row">
+                    <div class="col"><a>物品资料</a></div>
+                    <div class="col"><a>天赋模拟</a></div>
+                    <div class="col"><a>符文模拟</a></div>
+                </div>
+            </ion-item>
+
+            <ion-item class="item  item-icon-right ion-home" ng-click="data2.showDelete=!data2.showDelete;data2.showNav=false;icons2()">
+                　社区
+                <i class="icon {{data2.a}}" style="font-size:16px;"></i>
+            </ion-item>
+            <ion-item ng-show="data2.showDelete" ng-hide="data2.showNav">
+                <div class="row">
+                    <div class="col"><a>兴趣部落</a></div>
+                    <div class="col"><a>官方论坛</a></div>
+                    <div class="col"><a>知识学院</a></div>
+                </div>
+            </ion-item>
+            <ion-item class="item"><i class="icon ion-videocamera"></i>　英雄时刻</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

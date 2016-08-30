@@ -1,0 +1,84 @@
+<ion-view>
+    <ion-nav-title>
+        <div class="button-css button-bar">
+            <div class="button activated">好友</div>
+            <div class="button">消息</div>
+        </div>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <i class="icon ion-plus-round" style="font-size:22px;margin-top:5px;margin-right: 15px;"></i>
+    </ion-nav-buttons>
+    <ion-content>
+        <!--下拉刷新-->
+        <ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-c" on-refresh="refresh()"></ion-refresher>
+
+        <!--搜索框-->
+        <div class="item-input-inset has-hubheader">
+            <div class="item-input-wrapper">
+                <i class="icon icon-royal ion-search"></i>
+                <input type="text" placeholder="搜索你想了解的资讯">
+            </div>
+        </div>
+        <!---------------------好友动态--------------------------->
+
+        <ion-list>
+            <ion-item class="item item-avatar item-icon-right">
+                <img src="images/1_03.jpg">
+                <p>好友动态</p>
+                <i class="icon ion-ios-arrow-right" style="font-size:16px;"></i>
+            </ion-item>
+        </ion-list>
+
+        <!------------------------------掌盟好友---------------------------------->
+        <!--<ion-list>-->
+            <!--<ion-item ng-repeat="friend in friends" class="item">-->
+                <!--<i class="{{friend.icons}}"></i>-->
+                <!--<span>{{friend.title}}</span>-->
+            <!--</ion-item>-->
+        <!--</ion-list>-->
+        <ion-list>
+            <ion-item class="item" ng-click="data.showDelete=!data.showDelete;data.showNav=false;icons()">
+                <i class="{{data.a}}"></i>
+                <span>掌盟好友</span>
+            </ion-item>
+        </ion-list>
+        <ion-list ng-show="data.showDelete" ng-hide="data.showNav">
+            <ion-item class="title1 item-thumbnail-left">
+                <img src="images/1_06.jpg">
+                <h3>猫咪</h3>
+                <span class="text-right">游戏在线</span>
+            </ion-item>
+            <ion-item class="title1 item-thumbnail-left">
+                <img src="images/1_17.jpg">
+                <h3>丁丁</h3>
+                <span class="text-right">游戏离线</span>
+            </ion-item>
+        </ion-list>
+
+        <!------------------------------游戏好友---------------------------------->
+        <ion-list ng-click="data1.showDelete=!data1.showDelete;data1.showNav=false;icons1()">
+            <ion-item class="item">
+                <i class="{{data1.a}}"></i>
+                <span>游戏好友</span>
+            </ion-item>
+        </ion-list>
+
+        <ion-list ng-show="data1.showDelete" ng-hide="data1.showNav">
+            <ion-item class="title1 item-thumbnail-left">
+                <img src="images/1_23.jpg">
+                <h3>裁决</h3>
+                <span class="text-right">游戏在线</span>
+            </ion-item>
+            <ion-item class="title1 item-thumbnail-left">
+                <img src="images/00_08.jpg">
+                <h3>取个名字好难</h3>
+                <span class="text-right">游戏离线</span>
+            </ion-item>
+            <ion-item class="title1 item-thumbnail-left">
+                <img src="images/4_03.jpg">
+                <h3>情陷亚平宁</h3>
+                <span class="text-right">游戏离线</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

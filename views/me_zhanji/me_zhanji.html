@@ -1,0 +1,19 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>我的战绩</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <i class="ion-share" style="line-height:34px;font-size:28px;"></i>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="Record in Records">
+                <img ng-src="{{Record.pic}}">
+                <h3>{{Record.title}}</h3>
+                <i class="icon ion-ios-arrow-right" style="font-size:16px;"></i>
+                <div class="button button-small button-balanced">{{Record.explain}}</div>
+                <p class="text-right">{{Record.times}}</p>
+            </ion-item>
+            <ion-infinite-scroll on-infinite="zhanji()" immediate-check="false"></ion-infinite-scroll>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

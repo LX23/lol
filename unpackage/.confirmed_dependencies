@@ -1,0 +1,23 @@
+{
+	"index.html": {
+		"resources": [
+			"lib/js/ionic.bundle.min.js",
+			"js/app.js",
+			"lib/css/ionic.min.css",
+			"views/haoyou/haoyou.html",
+			"views/zixun/zixun.html",
+			"views/me/me.html",
+			"views/faxian/faxian.html",
+			"views/zx_banjia/zx_banjia.html",
+			"views/me_zichan/me_zichan.html",
+			"views/me_zhanji/me_zhanji.html",
+			"views/me_nengli/me_nengli.html",
+			"lib/ionic/fonts/ionicons.ttf",
+			"images/3_22.jpg",
+			"lib/ionic/css/ionic.min.css",
+			"lib/ionic/js/ionic.bundle.min.js",
+			"images/3.jpg",
+			"views/tour/tour.js"
+		]
+	}
+}

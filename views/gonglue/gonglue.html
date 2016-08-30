@@ -1,0 +1,30 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title class="row_css row">
+        <div ui-sref="tabs.zixun" class="col_css col">最新</div>
+        <div class="col_css col  positive">攻略</div>
+        <div ui-sref="tabs.zx_huodong" class="col_css col">活动</div>
+    </ion-nav-title>
+    <ion-content>
+        <!--下拉刷新-->
+        <ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-c" on-refresh="refresh()"></ion-refresher>
+        <!--搜索框-->
+        <div class="item-input-inset">
+            <div class="item-input-wrapper">
+                <i class="icon icon-royal ion-search"></i>
+                <input type="text" placeholder="搜索你想了解的资讯">
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="product in products" ui-sref="tabs.gonglue" class="item title1 item-thumbnail-left item-remove-animate item-text-wrap">
+                <img ng-src="{{product.imgsrc}}"/>
+                <h3>{{product.title}}</h3>
+                <p>{{product.explain}}</p>
+                <p class="text-right">{{product.times}}</p>
+            </ion-item>
+            <!--上拉刷新-->
+            <ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>
+            <!--<ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+<ion-view>
+    <ion-nav-title>我</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <i class="ion-ios-gear" menu-toggle style="line-height:34px;font-size:28px;margin-left: 20px;"></i>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <div class="item title1 item-thumbnail-left">
+                <img src="images/3_22.jpg" ><h3>放弃后的美</h3>
+                <h4>皮城警备<i class="icon ion-ios-arrow-down"></i></h4>
+                <h4>Lv30</h4>
+                <div class="button pic2 button-dark button-small icon-right ion-ios-arrow-right"><img src="images/3_06.jpg">   社区资料</div>
+            </div>
+        </div>
+        <div class="button-bar bar-stable">
+            <div class="button button-clear activated" ui-sref="tabs.me_zhanji"><h4>战绩</h4>
+                <ion-nav-view name="me-zhanji"></ion-nav-view>
+            </div>
+            <div class="button button-clear" ui-sref="tabs.me_nengli"><h4>能力</h4>
+                <ion-nav-view name="me-nengli"></ion-nav-view>
+            </div>
+            <div class="button button-clear" ui-sref="tabs.me_zichan"><h4>资产</h4>
+                <ion-nav-view name="me-zichan"></ion-nav-view>
+            </div>
+        </div>
+
+        <div class="list">
+        <div class="item zhanji item-thumbnail-left">
+            <img src="images/baiyin_03.gif">
+            <p>总局数 <span>2530</span><i class="button button-small button-positive icon-right ion-ios-arrow-right">查看详情</i></p>
+            <p>胜利 <span>1431</span>  失败 <span>1099</span></p>
+            <div class="jdt"><div class="sl"><p>胜57%</p></div></div>
+        </div>
+        </div>
+        <div class="button button-clear"><h5 class="ion-cube">  战绩</h5></div>
+
+
+        <ion-list>
+            <ion-item class="item title1 item-thumbnail-left item-icon-right" ng-repeat="Record in Records">
+                <img ng-src="{{Record.pic}}">
+                <h3>{{Record.title}}</h3>
+                <i class="icon ion-ios-arrow-right" style="font-size:16px;"></i>
+                <div class="button button-small button-balanced">{{Record.explain}}</div>
+                <p class="text-right">{{Record.times}}</p>
+            </ion-item>
+            <ion-infinite-scroll on-infinite="zhanji()" immediate-check="false"></ion-infinite-scroll>
+        </ion-list>
+
+
+
+    </ion-content>
+</ion-view>

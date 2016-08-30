@@ -1,0 +1,27 @@
+<ion-view hide-tabs="true">
+    <ion-nav-title>2016LPL夏季赛</ion-nav-title>
+    <ion-content>
+        <div class="box "><img src="images/banner00.jpg"></div>
+        <h5 style="background:#dedede;margin:0;padding:10px 0;">2016LPL夏季赛赛事预告及回顾</h5>
+
+        <div class="button-bar">
+            <div class="button button-positive activated">最新</div>
+            <div class="button button-positive">战报视频</div>
+        </div>
+
+
+
+        <ion-list>
+            <ion-item ng-repeat="product in products" ui-sref="tabs.zx_xiangqing" class="item title1 item-thumbnail-left item-remove-animate item-text-wrap">
+                <img ng-src="{{product.imgsrc}}"/>
+                <h3>{{product.title}}</h3>
+                <p>{{product.explain}}</p>
+                <p class="text-right">{{product.times}}</p>
+            </ion-item>
+            <!--上拉刷新-->
+            <ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>
+            <!--<ion-infinite-scroll on-infinite="infinite()" immediate-check="false"></ion-infinite-scroll>-->
+        </ion-list>
+
+    </ion-content>
+</ion-view>
